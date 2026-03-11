@@ -1,5 +1,6 @@
 import { glob } from 'astro/loaders';
-import { defineCollection, z } from 'astro:content'; 
+import { defineCollection } from 'astro:content'; 
+import { z } from 'astro/zod'
 
 const works = defineCollection({
     loader: glob({pattern: "src/content/**/*.md"}),
@@ -14,7 +15,7 @@ const works = defineCollection({
         imageTwo: image(),
         imageThree: image(),
         imageFour: image(),
-        liveSite: z.string().url(),
+        liveSite: z.url(),
         description: z.string().max(350),
         isFeatured: z.boolean(),
         isDraft: z.boolean()
