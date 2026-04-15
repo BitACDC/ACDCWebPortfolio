@@ -14,8 +14,8 @@
     --color-base-900: oklch(98% 0.001 106.423);
 
     /* FONTS */
-    --font-grunge: 'Road Rage', system-ui;
-    --font-mono: 'JetBrains Mono Variable', monospace;
+    --font-grunge: var(--font-grunge);
+    --font-mono: var(--font-mono);
 
     /* TEXT SIZES */
     --text-216: 13.5rem;

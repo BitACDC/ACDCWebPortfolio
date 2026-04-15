@@ -1,5 +1,5 @@
 ---
-
+import { Font } from "astro:assets";
 const { pageTitle } = Astro.props;
 ---
 <head>
@@ -11,6 +11,8 @@ const { pageTitle } = Astro.props;
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow" />
 	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<Font cssVariable="--font-grunge" />
+	<Font cssVariable="--font-mono" />
 	<title>Grunge - {pageTitle}</title>
 
 </head>
