@@ -1,10 +1,11 @@
 # Grunge 
-Grunge is a portfolio Astro theme with a grunge aesthetic, perfect for developers, designers and any other creative who wants to stand out and show their love for the 90s music scene. 
+Grunge is a portfolio Astro theme with a grunge aesthetic, perfect for developers, designers and any other creative who wants to stand out and show their love for the 90s music scene.
 
-Read [**changelog here**](https://jessgaspar.dev/changelog/grunge). 
+- [**Live Demo**](https://grunge.pages.dev) 
+- [**Changelog**](https://jessgaspar.dev/changelog/grunge) 
 
 ## Tech stack
-- Astro
+- Astro v6
 - Tailwind v4
 - JavaScript
 - TypeScript
@@ -22,6 +23,7 @@ Read [**changelog here**](https://jessgaspar.dev/changelog/grunge).
 - Reusable components
 - Tailwind theme
 - Pagination
+- SEO setup
 - Sitemap
 - Ongoing updates
 
@@ -56,6 +58,7 @@ Inside of your template, you'll see the following folders and files:
 │   │   │   └── Work.astro
 │   │   ├── global       # elements used on every page
 │   │   │   └── BaseHead.astro
+│   │   │   └── Seo.astro
 │   │   │   └── Footer.astro
 │   │   │   └── Navigation.astro
 │   │   │   └── Wrapper.astro
