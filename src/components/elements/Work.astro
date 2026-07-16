@@ -13,7 +13,7 @@ import Text from "../elements/Text.astro";
 import Heading from "../elements/Heading.astro";
 
 // props
-const { slug, featuredImage, title, client, category } = Astro.props;
+const { slug, featuredImage, title, client, category, year } = Astro.props;
 ---
 
 <div class="group lg:m-auto">
@@ -28,7 +28,9 @@ const { slug, featuredImage, title, client, category } = Astro.props;
             <div style=`background-image: url(${vinylDisk.src})` class="absolute top-0 -right-12 bg-cover z-0 xl:w-[350px] xl:h-[350px] lg:w-[300px] lg:h-[300px] md:w-[400px] md:h-[400px] sm:w-[250px] sm:h-[250px] w-[200px] h-[200px] transition-all duration-500 ease-in-out group-hover:-right-24 animate-spin"></div>
         </div>
         <Heading tagName="h3" tagSize="h4" class="group-hover:underline">{title}</Heading>
-        <Text variant={'md'}>{client}</Text>
+        <div class="flex items-center gap-2">
+            <Text variant={'md'}>{client}</Text>
+            <Text variant={'md'} class="text-base-900/60">— {year}</Text>
+        </div>
     </a>
 </div>
-

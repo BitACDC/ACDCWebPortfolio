@@ -8,9 +8,9 @@ import Link from "../../elements/Link.astro";
 // content collections
 import { getCollection } from "astro:content";
 const works = await getCollection("works");
-const featuredWorks = works.filter(work => work.data.isFeatured === true);
-console.log("WORKS COUNT:", works.length);
-console.log("FEATURED COUNT:", featuredWorks.length);
+const featuredWorks = works
+    .filter(work => work.data.isFeatured === true)
+    .sort((a, b) => Number(b.data.year) - Number(a.data.year));
 ---
 
 <Container variant={'lg'} class="items-center">
@@ -24,7 +24,8 @@ console.log("FEATURED COUNT:", featuredWorks.length);
                 featuredImage={work.data.featuredImage}
                 title={work.data.title}
                 client={work.data.client}
-                category={work.data.category}>
+                category={work.data.category}
+                year={work.data.year}>
             </Work>
         ))
         }
