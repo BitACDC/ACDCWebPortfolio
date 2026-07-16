@@ -2,10 +2,15 @@
 // components
 import Container from "../../elements/Container.astro"
 import ContactItem from "./ContactItem.astro"
+
+// assets
+import { Image } from "astro:assets";
+import resume from "../../../assets/images/DelaCruzAldjon_Resume.jpg";
 ---
 <Container variant={'md'}>
     <div class="flex lg:flex-row flex-col gap-8 text-base-900">
-        <ContactItem title="Email" contact="peterjones@email.com" />
-        <ContactItem title="Phone" contact="(555) 123-4567" />
+        <ContactItem title="Email" contact="aldjoncayldelacruz@email.com" />
+        <ContactItem title="Phone" contact="09708411616" />
     </div>
+    <Image src={resume} alt="Aldjon Cayl P. Dela Cruz Resume" class="w-full h-auto mt-8" />
 </Container>
