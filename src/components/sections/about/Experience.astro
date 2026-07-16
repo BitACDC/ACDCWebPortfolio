@@ -2,48 +2,144 @@
 // components
 import Container from "../../elements/Container.astro";
 import Heading from "../../elements/Heading.astro";
-import ResumeDropdown from "../../elements/ResumeDropdown.astro";
+import Text from "../../elements/Text.astro";
 import ContainerBottom from "../../elements/ContainerBottom.astro";
 
+// assets
+import { Image } from "astro:assets";
+import sysAd from "../../../assets/OJT/SysAd.png";
+import netAd from "../../../assets/OJT/NetAd.png";
+import endUser from "../../../assets/OJT/EndUser.png";
+
+import beyondBreach from "../../../assets/Certificates/Beyond the breach.jpg";
+import beyondCode from "../../../assets/Certificates/Beyond the Code.png";
+import cyberSocPH from "../../../assets/Certificates/CyberSocPH.png";
+import decodeData from "../../../assets/Certificates/Decode the data.png";
+import digitalTransformation from "../../../assets/Certificates/Digital Transformation.png";
+import headInClouds from "../../../assets/Certificates/Head in the Clouds.png";
+
 // content
-const experience = [
-    { 
-        title: "Senior Product Designer",
-        place: "Pixel & Co. Design Studio",
-        period: "2022 - Present",
-        text: "Leading design for high-growth startups and established brands across web, mobile, and product design."
-    },
-    { 
-        title: "UX/UI Designer",
-        place: "TechFlow Solutions",
-        period: "2020 - 2022",
-        text: "Designed and optimized user experiences for B2B software products serving enterprise clients."
-    },
-    { 
-        title: "Brand & Web Designer",
-        place: "Creative Collective Agency",
-        period: "2018 - 2020",
-        text: "Developed comprehensive brand identities and responsive websites for clients ranging from local startups to national retailers."
-    },
-    { 
-        title: "Junior Designer",
-        place: "Innovate Design House",
-        period: "2017 - 2018",
-        text: "Supported senior designers on various projects including print materials, digital assets, and brand campaigns."
-    },
-]
+const softSkills = [
+    "Critical Thinking",
+    "Leadership",
+    "Presentations",
+    "Creativity",
+    "Problem Solving",
+    "Initiative"
+];
+
+const technicalSkills = [
+    { category: "Coding Languages", items: "Python, C++" },
+    { category: "Backend Development", items: "Supabase" },
+    { category: "Database", items: "PostgreSQL, Oracle Database" },
+    { category: "UI Development", items: "HTML5, Flutter, Figma" }
+];
+
+const certifications = [
+    { src: beyondBreach, alt: "Beyond the Breach" },
+    { src: beyondCode, alt: "Beyond the Code" },
+    { src: cyberSocPH, alt: "CyberSocPH" },
+    { src: decodeData, alt: "Decode the Data" },
+    { src: digitalTransformation, alt: "Digital Transformation" },
+    { src: headInClouds, alt: "Head in the Clouds" }
+];
 ---
 
 <Container variant={'md'}>
     <Heading tagName="h2" tagSize="h2" class="text-center">Experience</Heading>
-    <div class="flex flex-col gap-4">  
-        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
-            {
-                experience.map((i) => (
-                    <ResumeDropdown title={i.title} place={i.place} period={i.period} text={i.text} />
-                ))
-            }
+
+    <!-- Skills -->
+    <div class="flex flex-col gap-4">
+        <Container class="flex flex-col gap-6 p-6 border-3 border-base-900">
+            <div>
+                <Heading tagName="h3" tagSize="h4">Soft Skills</Heading>
+                <div class="flex flex-wrap gap-3 mt-3">
+                    {softSkills.map((skill) => (
+                        <span class="px-3 py-1 border-2 border-base-900 text-base-900 text-sm">{skill}</span>
+                    ))}
+                </div>
+            </div>
+            <div>
+                <Heading tagName="h3" tagSize="h4">Technical Skills</Heading>
+                <div class="flex flex-col gap-2 mt-3">
+                    {technicalSkills.map((group) => (
+                        <Text variant={'sm'} class="text-base-900">
+                            <strong>{group.category}:</strong> {group.items}
+                        </Text>
+                    ))}
+                </div>
+            </div>
         </Container>
+        <ContainerBottom />
+    </div>
+
+    <!-- OJT Journey -->
+    <div class="flex flex-col gap-8">
+        <Heading tagName="h3" tagSize="h3" class="text-center">OJT Journey</Heading>
+
+        <!-- System Admin -->
+        <div class="flex flex-col gap-4">
+            <Heading tagName="h4" tagSize="h3">System Admin</Heading>
+            <Image src={sysAd} alt="System Admin" class="w-full h-auto border-3 border-base-900" />
+            <Text variant={'sm'} class="text-base-900">
+                During my time on the infrastructure team, a core responsibility involved managing and monitoring
+                local server infrastructure directly inside the enterprise data centers. To support the high volume
+                of automated data processing across the network, I handled routine tape reloading operations, which
+                served as a crucial pillar for the company's disaster recovery and offline backup storage strategies.
+                Using terminal utilities like Remote Desktop Connection Manager (RDCMan) from a secure station, I
+                regularly executed command-line data migration operations to ensure continuous storage optimization
+                and maintain high data availability.
+            </Text>
+        </div>
+
+        <!-- Network Admin -->
+        <div class="flex flex-col gap-4">
+            <Heading tagName="h4" tagSize="h3">Network Admin</Heading>
+            <Image src={netAd} alt="Network Admin" class="w-full h-auto border-3 border-base-900" />
+            <Text variant={'sm'} class="text-base-900">
+                My responsibilities under the network administration function focused heavily on responding to
+                localized connectivity tickets, physical layer media maintenance, and live traffic analysis. A
+                significant portion of this role involved structural cable management and handling network switches
+                directly within the server racks, where I organized dense patch panels and managed network
+                connections to maintain clear infrastructure layouts. I also performed hands-on hardware procedures,
+                including UTP cable crimping and verification testing using specialized tone generators and digital
+                cable analyzers, to ensure line integrity and minimal signal loss at individual user drop points.
+            </Text>
+            <Text variant={'sm'} class="text-base-900">
+                On the logical side, I regularly assisted with port activation and packet tracing tasks to resolve
+                routing bottlenecks and patch connections for various departments. Using command-line tools like
+                PuTTY, I interfaced with managed switches to modify VLAN configurations and activate specific ports
+                based on incoming support requests. This balance of physical infrastructure management and
+                software-defined network troubleshooting provided a solid foundation in maintaining enterprise-grade
+                network reliability and speed.
+            </Text>
+        </div>
+
+        <!-- End User Support -->
+        <div class="flex flex-col gap-4">
+            <Heading tagName="h4" tagSize="h3">End User Support</Heading>
+            <Image src={endUser} alt="End User Support" class="w-full h-auto border-3 border-base-900" />
+            <Text variant={'sm'} class="text-base-900">
+                In the End User Support role, I acted as a direct line of technical assistance for workplace hardware
+                deployment, device diagnostics, and thorough lifecycle tracking. This involved performing
+                comprehensive hardware troubleshooting on corporate machines, which required dismantling laptops to
+                diagnose component failures, clean internal cooling systems, and upgrade modular parts like storage
+                drives or keyboards. By regularly working on the hardware layout of enterprise laptops, I developed a
+                strong familiarity with device assembly standards and component testing.
+            </Text>
+        </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="flex flex-col gap-4">
+        <Heading tagName="h3" tagSize="h3" class="text-center">Certifications</Heading>
+        <div class="grid grid-cols-2 gap-4">
+            {certifications.map((cert) => (
+                <div class="border-3 border-base-900">
+                    <Image src={cert.src} alt={cert.alt} class="w-full h-full object-cover" />
+                </div>
+            ))}
+        </div>
         <ContainerBottom />
     </div>
 
