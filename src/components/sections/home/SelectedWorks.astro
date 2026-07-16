@@ -9,6 +9,8 @@ import Link from "../../elements/Link.astro";
 import { getCollection } from "astro:content";
 const works = await getCollection("works");
 const featuredWorks = works.filter(work => work.data.isFeatured === true);
+console.log("WORKS COUNT:", works.length);
+console.log("FEATURED COUNT:", featuredWorks.length);
 ---
 
 <Container variant={'lg'} class="items-center">
