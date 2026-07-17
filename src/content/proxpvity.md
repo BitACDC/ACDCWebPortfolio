@@ -16,4 +16,6 @@ proXPvity reimagines the to-do list as a game. Instead of a flat checklist, comp
 
 Users can set tasks, assign deadlines, and mark priority levels, earning points as activities are completed. Progress is reflected through leveling, giving users a tangible sense of momentum and helping them stay aware of their own productivity over time.
 
+![proXPvity app interface](../assets/projects/proxpvity_screenshot.jpg)
+
 Built with Kotlin and Android Studio on the front end, backed by Ktor, XAMPP, and Oracle SQL Developer, the app required building both the gamified mobile interface and the backend systems tracking tasks, XP, and user progress. As Lead Front-End and Back-End Developer, the role spanned the full stack of the application.
